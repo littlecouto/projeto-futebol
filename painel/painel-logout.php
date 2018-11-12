@@ -1,0 +1,3 @@
+<?php
+$lgn->EfetuaLogout();
+?>

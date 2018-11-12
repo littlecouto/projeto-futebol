@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Brasfoot</title>
+
+<link href="jogo.css" rel="stylesheet" type="text/css">
+<script src="jquery-3.0.0-alpha1.js"></script>
+
+<script src="include/js/jquery.bpopup.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+    $('p.placar').click(function() {
+        var classe = '.'+$(this).attr('data-class');
+        $('.resumo'+classe).bPopup();
+    });
+});
+</script>
+
+</head>
+
+<body>
+<div class="rodada">
+
+    <div class="jogo1">
+        <div style="display: none;">
+            <p class="abr1"></p>
+            <p class="abr2"></p>
+        </div>
+        <div class="jogadores">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+        
+        <!--<p class="posse">Posse de bola: <span class="man">50</span>% - <span class="vis">50</span>%</p>-->
+        <p class="tempo">0</p>
+        <img src='img/especiais/nike.png' width='35' class='escudo' alt='Nike' title='Nike'> 
+        <p class="placar" data-class="jogo1"> 0x0 </p>
+        <img src='img/especiais/adidas.jpg' width='35' class='escudo' alt='Adidas' title='Adidas'>
+        <p class="eventos"></p>
+        
+        <p style="display: none;" class="narrar">Vão começar as cobranças</p>
+        <p style="display: none;" class="timeM"><span>0</span> - </p>
+        <p style="display: none;" class="timeV"><span>0</span> - </p>
+        
+        <div class="jogo1 resumo">
+            <div class="man">
+                <h2>Nike</h2>
+                <ul class="jogadores">
+
+                </ul>
+            </div>
+            <div class="evento">
+                <div>
+                <div class="aviso">1º</div>
+                </div>
+            </div>
+            <div class="vis">
+                <h2>Adidas</h2>
+                <ul class="jogadores">
+                    
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="penaltis">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+        <button class="jogar" style='display: none;'>JOGAR</button>
+        <button class="pausar" style='display: none;'>PAUSAR</button>
+    </div>
+</div>
+    <script src="jogo.js"></script>
+    <script>
+    $(document).ready(function(){
+    Jogar('jogo1', 'Adidas', 'Nike', 'Maracanã', 
+        [
+            ['Neuer','Lahm','Hummels','Marcelo','James Rodrigues','Kross','Messi','Di Maria','Robben','Suárez','Bale'],
+            ['Courtois','Dani Alves','Thiago Silva','Sérgio Ramos','Alexis Sanchés','De Bruyne','Pirlo','Hazard','Cristiano Ronaldo','Zlatan Ibrahimovich','Neymar Jr.']
+        ],'1','1','2','9155','9185','0'
+        );
+    });
+    </script>
+
+</body>
+</html>

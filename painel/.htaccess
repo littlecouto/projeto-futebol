@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^(.*)$ $1\.php 
+	
+	DirectoryIndex 	pagina.php?url=index
+	RewriteRule ^painel-login/?$ /brasfoot/painel/painel-login.php
+
+	RewriteCond %{QUERY_STRING} ^(.*)$
+	RewriteRule ^([a-z0-9-]+)/?$ /brasfoot/painel/pagina.php?url=$1&%1
+
+
+	
+	
+
+
+</IfModule>

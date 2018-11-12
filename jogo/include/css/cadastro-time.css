@@ -1,0 +1,128 @@
+div#tudo {
+    width: 100%;
+    overflow: hidden;
+    padding: 65px 75px;
+    height: 100%;
+}
+
+#tudo form label input {
+    display: none;
+}
+#tudo form label input:checked + .time {
+    background-color: rgba(0,0,0,0.4);
+    border: 1px solid #BBB;
+}
+
+#tudo form {
+    overflow: hidden;
+}
+#tudo form input[type="submit"] {
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    box-sizing: border-box;
+    margin-left: -100px;
+    background-color: #197547;
+    box-shadow: 0px 0px 8px #000;
+    border-radius: 5px;
+}
+
+#tudo form input[type="submit"]:hover {
+    background-color: #186b41;
+}
+#tudo form .times {
+    float: left;
+    width: 90%;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 80%;
+    position: fixed;
+    box-sizing: border-box;
+    top: 10%;
+    box-shadow: inset 0px 0px 12px -2px #000;
+    border-radius: 5px;
+}
+
+#tudo form .times .time {
+    float: left;
+    width: 150px;
+    height: 190px;
+    position: relative;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 15px 11.5px 15px 11.5px;
+    transition: all .3s;
+}
+
+#tudo form .times .time p.titulo, #tudo form .times .time p.subtitulo {
+    float: left;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    position: absolute;
+    font: bold 17px/1.2 calibri;
+    color: #BBB;
+}
+
+#tudo form .times .time:hover {
+    background-color: rgba(0,0,0,.2);
+}
+
+#tudo form .times .time .escudo {
+    float: left;
+    width: 120px;
+    height: 150px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+#tudo form .times .time.ativo {
+    display: block;
+}
+
+#tudo form .times .time.inativo {
+    display: none;
+}
+#tudo form .pais select {
+    float: left;
+    width: 300px;
+    height: 57px;
+    padding: 15px;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 1;
+    top: .6%;
+    background-color: rgba(255, 255, 255, 0.1);
+    font: normal 19px/1.2 Calibri;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+}
+#tudo form .pais select[name=pais] {
+    margin-left: 280px;
+}
+
+#tudo form .pais select[name=divisao] {
+    margin-left: 590px;
+    width: 70px;
+}
+#tudo form .pais select:hover {
+    background-color: rgba(255,255,255,.2);
+    color: #333;
+}
+
+#tudo form .times .time:hover .escudo img {
+    -webkit-filter: drop-shadow(0px 0px 2px #000);
+}
+
+#tudo form .pais input#pesquisa {
+    position: fixed;
+    top: .6%;
+    line-height: 32px;
+    height: 57px;
+    box-sizing: border-box;
+    width: 270px;
+    border-radius: 5px;
+}
+#tudo form .times .time p.titulo span {
+    text-decoration: underline;
+}

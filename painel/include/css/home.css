@@ -1,0 +1,42 @@
+#site #central #conteudo h2  {
+	float: left;
+	width: 100%;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	color: #F60;
+	font-style: italic;
+	font-weight: normal;
+	text-align: right;
+	background-color: #E0E0E0;
+}
+/*-----------------------Usuario------------------------*/
+#site #central #conteudo .caixa {
+	width: 710px;
+	float: left;
+	border: 1px solid #FFF;
+	/*-webkit-border-radius: 10px;
+	-moz-border-radius: 5px;*/
+	margin-top: 20px;
+	padding: 10px;
+	font-size: 12px;
+}
+#site     #central #conteudo .caixa h1{
+	font-size: 16px;
+	font-style: italic;
+	color: #F60;
+	margin-bottom: 5px;
+	font-weight: normal;
+	background-color: #FFF;
+	padding: 5px;
+}
+#site #central #conteudo .caixa #botoes-home {
+	float: left;
+	margin-top: 15px;
+}
+#site #central #conteudo .caixa #botoes-home a img {
+	float: left;
+	margin-right: 4px;
+	margin-left: 3px;
+}

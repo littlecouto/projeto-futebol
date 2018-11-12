@@ -1,0 +1,93 @@
+#conteudo {
+	height: auto;
+	font-family: tahoma;
+	font-size: 11px;
+}
+#conteudo .relatorio td   {
+	border: 1px solid #000;
+}
+
+#conteudo table {
+	font-size: 12px;
+	font-family: arial;
+}
+
+#conteudo input {
+	font-size: 11px;
+}
+#conteudo  select {
+	font-size: 11px;
+}
+
+
+
+
+#conteudo h1 {
+	font-family: arial;
+	color: #000000;
+	display: block;
+	border-bottom-width: 1px;
+	font-size: 22px;
+	text-align: left;
+	font-weight: bold;
+}
+#conteudo h2 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: arial;
+	font-style: italic;
+	color: #0066CC;
+	text-align: center;
+}
+#conteudo img {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#conteudo a {
+	text-decoration: none;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	color: #000000;
+}
+#conteudo .t_campo {
+	font-weight: bold;
+	color: #000000;
+	font-family: arial;
+	font-size: 12px;
+	border: 1px solid #000000;
+}
+#conteudo .t_cat {
+	text-align: left;
+	font-size: 14px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	font-weight: bold;
+}
+#conteudo .t_col {
+	font-weight: bold;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+}
+
+#conteudo button {
+	color: #FFFFFF;
+	background-color: #0066CC;
+	text-align: center;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 2px;
+	padding-right: 10px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+}
+#conteudo .printos td {
+	border: 1px solid #666666;
+}

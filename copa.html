@@ -1,0 +1,381 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="iso-8859-1">
+<title>Brasfoot</title>
+
+<script src="jquery-3.0.0-alpha1.js"></script>
+<link href="jogo.css" rel="stylesheet" type="text/css">
+
+<script src="include/js/jquery.bpopup.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+    $('p.placar').click(function() {
+        var classe = '.'+$(this).attr('data-class');
+        $('.resumo'+classe).bPopup();
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<script>
+$(document).ready(function(){
+
+            Jogar('jogo1', 'São Paulo', 'Internacional', 'Morumbi',
+            [
+                [
+                'Rogério Ceni',
+                'Luiz Eduardo',
+                'Rafael Tolói',
+                'Auro',
+                'Carlinhos',
+                'Wilder',
+                'Ganso',
+                'Thiago Mendes',
+                'Rodrigo Caio',
+                'Pato',
+                'Centurión'
+                ],
+                [
+                'Muriel',
+                'Réver',
+                'Alan Costa',
+                'Eduardo',
+                'Alan Ruschel',
+                'Rodrigo Dourado',
+                'Wellington',
+                'Valdivia',
+                'Anderson',
+                'William',
+                'Eduardo Sasha'
+                ]
+            ],'6897', '6', '31', '137', '89', '1', '3', '3');
+
+            Jogar('jogo2', 'Santos', 'Fluminense', 'Vila Belmiro',
+            [
+                [
+                'Vanderlei',
+                'Leonardo',
+                'David Braz',
+                'Zeca',
+                'Victor Ferraz',
+                'Vitor Bueno',
+                'Lucas Lima',
+                'Marquinhos Gabriel',
+                'Rafael Longuine',
+                'Ricardo Oliveira',
+                'Geuv�nio'
+                ],
+                [
+                'Diego Cavalieri',
+                'Marlon',
+                'Gum',
+                'Breno Lopes',
+                'Wellington Silva',
+                'Edson',
+                'Robert ',
+                'Cícero',
+                'Rafinha',
+                'Fred',
+                'Lucas Gomes'
+                ]
+            ],'6898', '33', '26', '133', '99', '1', '1', '2');
+
+            Jogar('jogo3', 'Goiás', 'Joinville', 'Serra Dourada',
+            [
+                [
+                'Renan',
+                'Valmir Lucas',
+                'Rodrigo',
+                'Gimenez',
+                'Diogo Barbosa',
+                'Patrick',
+                'Felipe Menezes',
+                'Liniker',
+                'Everton',
+                'Erik',
+                'Fred'
+                ],
+                [
+                'Agenor',
+                'Rafael Donato',
+                'Douglas Silva',
+                'Arnaldo',
+                'Edson Ratinho',
+                'Anselmo',
+                'Marcelinho Para�ba',
+                'Naldo',
+                'Lucas Crispim',
+                'Trípodi',
+                'Edigar Junio'
+                ]
+            ],'6899', '32', '36', '117', '91', '1', '0', '1');
+
+            Jogar('jogo4', 'Corinthians', 'Flamengo', 'Arena Corinthians',
+            [
+                [
+                'Cássio',
+                'Gil',
+                'Edu Dracena',
+                'Guilherme Arana',
+                'Uendel',
+                'Marciel',
+                'Rodriguinho',
+                'Renato Augusto',
+                'Cristian',
+                'Luciano',
+                'Vagner Love'
+                ],
+                [
+                'Thiago',
+                'Samir ',
+                'César Martins',
+                'Jorge',
+                'Ayrton',
+                'Ederson',
+                'Alan Patrick',
+                'Canteros',
+                'Jonas',
+                'Paolo Guerrero',
+                'Kayke'
+                ]
+            ],'6900', '14', '29', '128', '96', '1', '1', '2');
+});
+
+</script>
+
+
+<div class="rodada">
+        <h1>38ª TEMPORADA</h1>
+        <h2>RODADA 1</h2>
+
+    <div class="jogo1">
+        <div style="display: none;">
+            <p class="abr1"></p>
+            <p class="abr2"></p>
+        </div>
+        <div class="jogadores">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+
+        <!--<p class="posse">Posse de bola: <span class="man">50</span>% - <span class="vis">50</span>%</p>-->
+        <p class="tempo">0</p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/sao-paulo-futebol-clube.png&amp;w=35&amp;h=35' class='escudo' alt='SAO' title='SAO'>
+        <p class="placar" data-class="jogo1"> 0x0 </p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/internacional.png&amp;w=35&amp;h=35' class='escudo' alt='INT' title='INT'>
+        <p class="eventos"></p>
+
+
+        <div class="jogo1 resumo">
+            <div class="man">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/sao-paulo-futebol-clube.png&amp;w=75&amp;h=75' class='escudo' alt='SAO' title='SAO'>
+                <h2>S�o Paulo</h2>
+                <ul class="jogadores">
+
+                </ul>
+            </div>
+            <div class="evento">
+                <div>
+                <div class="aviso">1º</div>
+                </div>
+            </div>
+            <div class="vis">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/internacional.png&amp;w=75&amp;h=75' class='escudo' alt='INT' title='INT'>
+                <h2>Internacional</h2>
+                <ul class="jogadores"></ul>
+            </div>
+            <div class="posse">
+                <p class='man'>50%</p>
+                <p class='vis'>50%</p>
+            </div>
+
+
+
+            <div class="penaltis">
+                <p style="display: none;" class="narrar">V�o come�ar as cobran�as</p>
+                <p style="display: none;" class="timeM"><span>0</span> - </p>
+                <p style="display: none;" class="timeV"><span>0</span> - </p>
+                <div class="man"></div>
+                <div class="vis"></div>
+            </div>
+
+        </div>
+
+        <button class="jogar" style='display: none;'>JOGAR</button>
+        <button class="pausar" style='display: none;'>PAUSAR</button>
+    </div>
+
+
+    <div class="jogo2">
+        <div style="display: none;">
+            <p class="abr1"></p>
+            <p class="abr2"></p>
+        </div>
+        <div class="jogadores">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+
+        <!--<p class="posse">Posse de bola: <span class="man">50</span>% - <span class="vis">50</span>%</p>-->
+        <p class="tempo">0</p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/santos.png&amp;w=35&amp;h=35' class='escudo' alt='SAN' title='SAN'>
+        <p class="placar" data-class="jogo2"> 0x0 </p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/fluminense.png&amp;w=35&amp;h=35' class='escudo' alt='FLU' title='FLU'>
+        <p class="eventos"></p>
+
+        <div class="jogo2 resumo">
+            <div class="man">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/santos.png&amp;w=75&amp;h=75' class='escudo' alt='SAN' title='SAN'>
+                <h2>Santos</h2>
+                <ul class="jogadores">
+
+                </ul>
+            </div>
+            <div class="evento">
+                <div>
+                <div class="aviso">1º</div>
+                </div>
+            </div>
+            <div class="vis">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/fluminense.png&amp;w=75&amp;h=75' class='escudo' alt='FLU' title='FLU'>
+                <h2>Fluminense</h2>
+                <ul class="jogadores"></ul>
+            </div>
+            <div class="posse">
+                <p class='man'>50%</p>
+                <p class='vis'>50%</p>
+            </div>
+
+
+            <div class="penaltis">
+                <p style="display: none;" class="narrar">V�o come�ar as cobran�as</p>
+                <p style="display: none;" class="timeM"><span>0</span> - </p>
+                <p style="display: none;" class="timeV"><span>0</span> - </p>
+                <div class="man"></div>
+                <div class="vis"></div>
+            </div>
+
+        </div>
+
+        <button class="jogar" style='display: none;'>JOGAR</button>
+        <button class="pausar" style='display: none;'>PAUSAR</button>
+    </div>
+
+
+    <div class="jogo3">
+        <div style="display: none;">
+            <p class="abr1"></p>
+            <p class="abr2"></p>
+        </div>
+        <div class="jogadores">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+
+        <!--<p class="posse">Posse de bola: <span class="man">50</span>% - <span class="vis">50</span>%</p>-->
+        <p class="tempo">0</p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/goias.png&amp;w=35&amp;h=35' class='escudo' alt='GOI' title='GOI'>
+        <p class="placar" data-class="jogo3"> 0x0 </p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/joinville.png&amp;w=35&amp;h=35' class='escudo' alt='JOI' title='JOI'>
+        <p class="eventos"></p>
+
+        <div class="jogo3 resumo">
+            <div class="man">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/goias.png&amp;w=75&amp;h=75' class='escudo' alt='GOI' title='GOI'>
+                <h2>Goi�s</h2>
+                <ul class="jogadores">
+
+                </ul>
+            </div>
+            <div class="evento">
+                <div>
+                <div class="aviso">1º</div>
+                </div>
+            </div>
+            <div class="vis">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/joinville.png&amp;w=75&amp;h=75' class='escudo' alt='JOI' title='JOI'>
+                <h2>Joinville</h2>
+                <ul class="jogadores"></ul>
+            </div>
+            <div class="posse">
+                <p class='man'>50%</p>
+                <p class='vis'>50%</p>
+            </div>
+
+            <div class="penaltis">
+                <p style="display: none;" class="narrar">V�o come�ar as cobran�as</p>
+                <p style="display: none;" class="timeM"><span>0</span> - </p>
+                <p style="display: none;" class="timeV"><span>0</span> - </p>
+                <div class="man"></div>
+                <div class="vis"></div>
+            </div>
+
+        </div>
+
+        <button class="jogar" style='display: none;'>JOGAR</button>
+        <button class="pausar" style='display: none;'>PAUSAR</button>
+    </div>
+
+
+    <div class="jogo4">
+        <div style="display: none;">
+            <p class="abr1"></p>
+            <p class="abr2"></p>
+        </div>
+        <div class="jogadores">
+            <div class="man"></div>
+            <div class="vis"></div>
+        </div>
+
+        <!--<p class="posse">Posse de bola: <span class="man">50</span>% - <span class="vis">50</span>%</p>-->
+        <p class="tempo">0</p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/sport-club-corinthians-paulista.png&amp;w=35&amp;h=35' class='escudo' alt='COR' title='COR'>
+        <p class="placar" data-class="jogo4"> 0x0 </p>
+        <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/flamengo.png&amp;w=35&amp;h=35' class='escudo' alt='FLA' title='FLA'>
+        <p class="eventos"></p>
+
+
+        <div class="jogo4 resumo">
+            <div class="man">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/sport-club-corinthians-paulista.png&amp;w=75&amp;h=75' class='escudo' alt='COR' title='COR'>
+                <h2>Corinthians</h2>
+                <ul class="jogadores">
+
+                </ul>
+            </div>
+            <div class="evento">
+                <div>
+                <div class="aviso">1º</div>
+                </div>
+            </div>
+            <div class="vis">
+                <img src='imagem.php?img=http://ewebtecnologia.com.br/vini/brasfoot/img/time/flamengo.png&amp;w=75&amp;h=75' class='escudo' alt='FLA' title='FLA'>
+                <h2>Flamengo</h2>
+                <ul class="jogadores"></ul>
+            </div>
+            <div class="posse">
+                <p class='man'>50%</p>
+                <p class='vis'>50%</p>
+            </div>
+
+            <div class="penaltis">
+                <p style="display: none;" class="narrar">V�o come�ar as cobran�as</p>
+                <p style="display: none;" class="timeM"><span>0</span> - </p>
+                <p style="display: none;" class="timeV"><span>0</span> - </p>
+
+                <div class="man"></div>
+                <div class="vis"></div>
+            </div>
+
+        </div>
+
+        <button class="jogar" style='display: none;'>JOGAR</button>
+        <button class="pausar" style='display: none;'>PAUSAR</button>
+    </div>
+</div>
+<script src="jogo.js"></script>

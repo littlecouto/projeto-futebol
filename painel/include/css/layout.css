@@ -1,0 +1,980 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF;
+    font-family: calibri, verdana;
+    font-size: 13px;
+    color: #666;
+    padding-bottom: 50px;
+}
+html, body {
+    height: 100%;
+    display: table;
+    float: left;
+    width: 100%;
+}
+img{
+    border: none;
+}
+
+
+
+
+
+/* LOGIN */
+#login {
+	width: 100%;
+	height: 100%;
+	float: left;
+	position: absolute;
+	text-align: center;
+	padding-top: 60px;
+}
+
+#login form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+}
+
+#login form input {
+	background-color: #ECECEC;
+	border: none;
+	padding: 20px;
+	color: #999;
+	font-size: 28px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	width: 280px;
+	float: left;
+}
+
+#login form button {
+	border: none;
+	color: #FFF;
+	font-size: 18px;
+	float: right;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width: 320px;
+}
+
+
+
+
+/* FIM MENU TELAS */
+
+
+
+
+
+ul#submenu li, ul#submenuitem li {
+    float: right;
+}
+
+/* CONTEUDO */
+
+#conteudo{
+	width: 1000px;
+	margin-left: -500px;
+	position: relative;
+	display: table;
+	left: 50%;
+	float: left;
+	height: 100%;
+}
+
+#conteudo h1{
+	font-size: 36px;
+	margin-bottom: 10px;
+	display: block;
+	margin-top: 10px;
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+#conteudo h2{
+	font-size: 16px;
+	display: block;
+	padding-left: 1%;
+	float: left;
+	width: 99%;
+	margin: 10px 0px;
+}
+#topo {
+	float: left;
+	width: 80px;
+	margin-bottom: 40px;
+	height: 60px;
+	position: fixed;
+	top: 10px;
+	z-index: 10000;
+	margin-left: 10px;
+}
+#topo .logo {
+	float: left;
+	height: 60px;
+	position: relative;
+	z-index: 10;
+}
+#topo .menu {
+	float: right;
+	width: 150px;
+	height: 30px;
+	padding-top: 20px;
+	text-align: right;
+}
+#topo .menu a {
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+	padding: 10px;
+}
+#topo .menu a:hover {
+	text-decoration: underline;
+}
+
+
+
+/* FIM LOGIN */
+
+
+
+
+
+
+
+
+
+
+/* MENU SUPERIOR */
+
+#menu {
+	width: 1000px;
+	float: right;
+	z-index: 9999;
+	position: fixed;
+}
+
+#menu .nav > li:hover #submenu,
+#menu .nav > li #submenu li:hover #submenuitem
+{
+    display: block;
+}
+#menu > ul {
+    list-style-type: none;
+    float: right;
+    position: relative;
+}
+#menu ul li {
+    position: relative;
+    float: right;
+    list-style-type: none;
+}
+
+#menu ul li a {
+	margin: 0px;
+	text-decoration: none;
+	float: left;
+	color: #FFF;
+	font-size: 12px;
+	padding: 30px 16px;
+	border: 1px solid transparent;
+}
+
+/* FIM MENU SUPERIOR */
+
+
+
+
+
+/* MENU TELAS */
+
+
+ul#submenu {
+	float: right;
+	list-style: none;
+	padding: 5px;
+	background-color: #E9E9E9;
+	min-height: 39px;
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: -56px;
+	width: 200px;
+	z-index: 1;
+	box-sizing: border-box;
+	border-radius: 0px 0px 5px 5px;
+	box-shadow: 0px 0px 7px -1px #000;
+}
+ul#submenu > li {
+	position: relative;
+	z-index: 0;
+	width: 100%;
+}
+ul#submenuitem{
+	position: absolute;
+	display: none;
+	right: 100%;
+	top: 0px;
+	background-color: #E9E9E9;
+	width: 200px;
+	padding: 5px;
+	border-radius: 5px 0px 0px 5px;
+	z-index: 1;
+	box-shadow: 0px 0px 7px -1px #000;
+}
+ul#submenu > li > a.ativo {
+    min-width: 123px;
+    text-align: center;
+}ul#submenu > li > a{
+	display: block;
+	float: left;
+	font-size: 14px;
+	color: #666;
+	text-decoration: none;
+	padding: 5px 15px;
+}
+ul#submenuitem li {
+	display: block;
+	float: left;
+	list-style: none;
+	width: 100%;
+}
+ul#submenuitem li a {
+	float: left;
+	font-size: 14px;
+	color: #666;
+	text-decoration: none;
+	padding: 10px 15px;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+}
+ul#submenu > li > a{
+	padding: 15px 20px;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid transparent;
+}
+ul#submenu li:hover > a, 
+ul#submenu li a.ativo,
+ul#submenuitem li a:hover, 
+ul#submenuitem li a.ativo
+{
+	background-color: #B3B3B3;
+	color: #000;
+}
+#topo .logo img {
+    -webkit-filter: drop-shadow(0px 0px 4px #000);
+}
+/* FIM CONTEUDO */
+
+
+
+
+
+/* FORMULARIO FILTRO */
+
+form[name=filtro] {
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+form[name=filtro] input[type=text]{
+    padding: 5px;
+    margin: 0px;
+    width: 810px;
+    font-size: 16px;
+}
+form[name=filtro] input[type=image]{
+    margin: 0px;
+}
+
+
+
+
+form[name=filtro-peq] {
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+form[name=filtro-peq] input[type=text], form[name=filtro-peq] select{
+    padding: 5px;
+    margin: 0px;
+    font-size: 16px;
+}
+form[name=filtro-peq] input[type=image]{
+    margin: 0px;
+}
+
+
+
+
+
+
+
+.formulario {
+	float: left;
+	width: 100%;
+}
+.formulario .area {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #BBB;
+    padding-bottom: 20px;
+}
+.formulario .area .linha{
+	float: left;
+	width: 100%;
+	background-color: #FFF;
+	box-sizing: border-box;
+	padding: 15px;
+}
+.formulario .area .linha .t_campo {
+	float: left;
+	color: #333;
+	width: 150px;
+	margin-right: 0px;
+	font-size: 15px;
+	text-align: right;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 1px solid #BBB;
+	padding-right: 10px;
+	background-color: #CCC;
+	min-height: 56px;
+	border-radius: 10px 0px 0px 10px;
+	padding: 17px 10px 10px 0px;
+	border-right: none;
+	box-sizing: border-box;
+}
+.formulario .area .linha .campo {
+    float: left;
+    font-size: 12px;
+}
+.formulario .area .linha .campo p{
+    font-size: 14px;
+}
+
+.formulario .area .linha .campo label input, .formulario .area .linha .campo label select  {
+    padding: 8px 10px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #000;
+    background-color: #FFF;
+    width: 510px;
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 10px -3px #000;
+    border-radius: 0px 5px 5px 0px;
+}
+.formulario .area .linha .campo label textarea  {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 14px;
+    background-color: #FFF;
+    width: 750px;
+    height: 100px;
+    border: 1px solid #CCC;
+}
+.formulario .area .linha .campo label .obrigatorio  {
+    box-shadow: inset 0px 0px 6px 1px #000;
+}
+.formulario .area .linha .campo label .metade  {
+    width: 250px;
+}
+.formulario .area .linha .campo label .grd {
+    height: 300px;
+}
+.formulario form .area .colunaFuncao {
+	float: left;
+	width: 47%;
+	padding: 1%;
+	border: 1px solid #CCC;
+	min-height: 100px;
+}
+/* FIM FORMULARIO FILTRO */
+
+
+
+
+.formulario table  {
+    width: 100%;
+}
+.formulario table tr th  {
+	font-size: 14px;
+	color: #FFF;
+	padding: 5px;
+	text-align: left;
+}
+.formulario table tr td  {
+    font-size: 13px;
+    padding: 10px 15px;
+}
+
+div.campo {
+    width: 805px;
+}
+button , input[type=button], input[type=submit]{
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: normal;
+	font-variant: normal;
+	display: block;
+	color: #FFF;
+	padding-top: 7px;
+	padding-right: 15px;
+	padding-bottom: 7px;
+	padding-left: 15px;
+	border-left-width: 4px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #CCC;
+	margin-left: 10px;
+	float: right;
+}
+
+button.cadastrar:before {
+    content: '+';
+    width: 10px;
+    margin-left: 20px;
+    font: normal 55px/35px Calibri;
+    float: left;
+    margin-top: 2px;
+}
+
+form .area .img {
+    width: 50px;
+    margin-top: 15px;
+    position: relative;
+}
+button.proxEta {
+    float: right;
+    width: 200px;
+    font: normal 22px/166.6666666% impact;
+    background-color: #FFC926;
+    border: none;
+    margin-left: 15px;
+}
+
+
+*[onblur*="toUpperCase"] {
+    text-transform: uppercase;
+}
+*[onblur*="toLowerCase"] {
+    text-transform: lowercase;
+}
+.dataColaboradora div.data {
+    float: left;
+    width: 216px;
+    padding: 10px 5px 10px 5px;
+    border: 1px solid #BBB;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.dataColaboradora .data select {
+    float: left;
+    width: 215px;
+    padding: 5px;
+    padding-left: 10px;
+}
+.dataColaboradora .data span {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px 0px;
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.dataColaboradora .data select.inativo {
+    border: 2px solid #F00;
+    padding: 4px;
+    padding-left: 10px;
+}
+
+.dataColaboradora .data p {
+    width: 198px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    float: left;
+    border: 1px solid #BBB;
+    line-height: 25px;
+    border-top: none;
+    padding-left: 15px;
+    background-color: #FFF;
+}
+
+.dataColaboradora div.data:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.dataColaboradora {
+    float: left;
+    width: 1000px;
+}
+.dataColaboradora .data span.funcao {
+    font-size: 11px;
+    text-align: left;
+    font-weight: normal;
+    margin-left: 15px;
+}
+.dataColaboradora div.data input.data {
+    border: none;
+    width: 85px;
+    font: inherit;
+    background-color: transparent;
+    cursor: inherit;
+}
+table .dataage {
+    float: left;
+    width: 150px;
+    min-height: 125px;
+    border: 1px solid #BBB;
+    padding: 10px;
+}
+
+table .dataage span {
+    width: 150px;
+    text-align: center;
+    float: left;
+}
+
+table .dataage * {
+    width: 150px;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.area div.Altdata {
+    width: 150px;
+    float: left;
+    min-height: 50px;
+    border: 1px solid #BBB;
+    padding: 10px;
+    margin: 9px;
+}
+
+.area div.Altdata select {
+    width: 150px !important;
+    float: left;
+    font-size: 13px !important;
+    margin-bottom: 15px;
+}
+.area div.Altdata label {
+    width: 200px;
+
+    float: left;
+}
+
+.area div.Altdata label span {
+    width: 200px;
+    float: left;
+}
+.area div.Altdata select.vermelho {
+    background-color: rgba(255, 0, 0, .5) !Important;
+}
+.Altdata > span {
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.sel.tudo {
+    margin: 1.5px 4px 0px -3px;
+    float: left;
+}
+
+table tr:not(.incolor) {
+    background-color: #FFF;
+}
+table tr.modulo {
+    background-color: #AAA;
+    color: #666;
+}
+table tr.modulo td {
+    font: bold 19px/1.5 Calibri;
+    padding: 15px;
+    border-top: 5px solid #DDD;
+}
+table tr.principal {
+    background-color: #BBB;
+    color: #666;
+}
+table tr.principal td {
+    font: bold 15px/1.5 Calibri;
+    border-top: 5px solid #DDD;
+}
+table tr.principal + tr.item td {
+    border-top: 5px solid #DDD;
+}table tr.principal td:first-of-type {
+    padding-left: 25px;
+}
+table tr.item {
+    background-color: #EEE;
+    color: #666;
+}
+table tr.item td:first-of-type {
+	padding-left: 35px;
+}
+
+table tr:not(.incolor):hover {
+    background: #E0E0E0;
+}
+input[type="file"]::-webkit-file-upload-button {
+   -webkit-box-align: center;
+   text-align: center;
+   cursor: default;
+   color: #FFF;
+   padding: 4px 6px 4px 6px;
+   border: 1px solid #CCC;
+   border-left-width:4px;
+   border-image: initial;
+   box-sizing: border-box;
+   margin-left: -4px;
+   margin-top: -1px;
+   background-color: #666;
+}
+select[size] {
+    width: 270px;
+}
+div#verEmail ul {
+    float: left;
+}
+
+button.add {
+    background: transparent;
+    border: none;
+    float: left;
+    width: 11px;
+    margin: 0;
+    padding: 7px;
+}
+
+select[size] option {width: 260px;padding: 5px;font-size: 12px;}
+
+input.datas {
+    width: 15px !important;
+    float: left;
+}
+
+label input.datas + span {
+    width: 100px;
+    float: left;
+    line-height: 25px;
+    margin-left: 5px;
+    font-size: 13px;
+    color: #666;
+}
+
+.campo.selData label {
+    width: 120px;
+    float: left;
+}
+label input.datas:checked + span {
+    font-weight: bold;
+    color: #000;
+}
+
+label input.datas:disabled+ span {
+    color: #bbb;
+}
+#res ul li input {
+    display: none;
+}
+
+#res ul li {
+    display: block;
+}
+button.addEma {
+    float: left;
+    border: none;
+    background: transparent;
+    padding: 5px;
+    margin: 0;
+}
+div#res ul {
+    float: left;
+}
+
+p.palavras {
+    float: left;
+    width: 790px;
+    text-align: justify;
+}
+
+p.palavras span {
+    margin-right: 10px;
+    width: 380px;
+    float: left;
+}
+
+p.palavras span:hover {
+    text-decoration: underline;
+}
+.semCor tr {
+    background: #FFF !Important;
+}
+
+a#add, a.del {
+    float: left;
+    margin-left: 5px;
+    text-decoration: none;
+    color: #000;
+    font: bold 14px/27px Calibri;
+}
+span.igual, span.variavel {
+    float: left;
+    font-size: 21px;
+    margin: 0px 5px;
+}
+
+.area.adicionar label {
+    width: 100%;
+    float: left;
+    margin: 5px 0px;
+}
+
+tr.status td[class*=ativo]{
+    float: left;
+    padding: 0px 5px !important;
+    width: 26px !important;
+    border: 1px solid #BBB;
+    border-radius: 20px;
+    margin-top: 16px;
+    cursor: pointer;
+    height: 10px;
+    transition: all .3s;
+}
+@keyframes example {
+    from {transform: rotate(180deg);}
+    to {transform: rotate(-180deg);}
+}
+
+
+tr.status td a {
+    padding: 9px;
+    border-radius: 50%;
+    float: left;
+    transition: all .3s;
+    margin-top: -4px;
+}
+tr.status td.ativo a {
+    margin-left: 15px;
+    background-color: #2B9172;
+    box-shadow: -2px 0px 1px #666;
+}
+tr.status td.inativo a {
+    margin-left: -6px;
+    background-color: #b20000;
+    box-shadow: 2px 0px 1px #666;
+}
+
+.alterar:hover img {
+    animation-name: example;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay:0s;
+}
+table.semCor select {
+	width: 160px !important;
+	font-size: 16px !important;
+	padding: 15px !important;
+	box-sizing: content-box;
+}
+
+td.inativo {
+    background-color: rgba(178,0,0,.5);
+}
+
+td.ativo {
+    background-color: rgba(43,145,114,.5);
+}
+.formulario .area .linha .t_campo.continente {
+    height: 268px;
+}
+.formulario .area .linha .campo label input[type="color"] {
+    height: 42px;
+    padding: 0px;
+    -webkit-appearance: none;
+    float: right;
+    width: 42px;
+}
+
+.formulario .area .linha .campo span.comentario {
+    width: 510px;
+    float: left;
+    margin: 5px 0px 0px 5px;
+}
+
+
+.formulario .area .linha .campo.cores {
+    width: 510px;
+}
+
+.formulario .area .linha .campo label span.cor {
+    width: 465px;
+    height: 42px;
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid #BBB;
+    font: bold 16px/34px Calibri;
+    padding: 0px 15px;
+}
+.formulario .area .linha .campo label span.cor.escolhido {
+    border-width: 5px;
+}
+.formulario .area .linha .campo img + a:before {
+    content: url('../img/bt/bt_excluir.gif');
+    width: 15px;
+    height: 14px;
+    float: left;
+    position: absolute;
+    top: 10px;
+    right: -16px;
+}
+.formulario .area .linha.caracteristica label {
+    float: left;
+    width: 95%;
+    padding-left: 2.5%;
+}
+.formulario .area .linha.caracteristica {
+	width: 730px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.formulario .area .linha.caracteristica .campo {
+	box-sizing: border-box;
+}
+
+.formulario .area .linha .campo span.valor {
+    position: absolute;
+    right: 15px;
+    top: 28px;
+    background-color: #AAAAAA;
+    color: #FFF;
+    padding: 5px;
+    border-radius: 60%;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    line-height: 21px;
+    text-align: center;
+    z-index: 3;
+    font: bold 13px/20px Calibri;
+}
+
+.formulario .area .linha.caracteristica.especialidade .campo {
+    width: 510px !important;
+}
+
+.formulario .area .linha.caracteristica.outra_especialidade .campo {
+    width: 382.5px !important;
+}
+
+.formulario .area .linha.caracteristica.especialidade .campo .rangeSlider__fill {
+    background-color: #063;
+}
+
+.formulario .area .linha.caracteristica.outra_especialidade .campo .rangeSlider:after {
+    content: '';
+    width: 183.5px;
+    height: 20px;
+    float: left;
+    position: absolute;
+    right: -163.5px;
+    z-index: 0;
+    background: #AAA;
+    border-radius: 0px 10px 10px 0px;
+}
+.formulario .area .linha.caracteristica.especialidade .campo .rangeSlider:after {
+    content: '';
+    width: 50px;
+    height: 20px;
+    float: left;
+
+
+    position: absolute;
+    right: -35px;
+    z-index: 0;
+    background: #AAA;
+    border-radius: 0px 10px 10px 0px;
+}
+ul#submenu:hover >li:not(:hover) > .ativo:not(:hover) {
+    background-color: #DDD;
+}
+
+ul#submenu:hover >li > ul .ativo:not(:hover) {
+    background-color: #DDD;
+}
+
+
+ul.nav:hover .ativo:not(:hover) {
+    background-color: rgba(0,0,0,.2) !important;
+}
+
+ul#submenuitem li:nth-child(even):not(:hover) a:not(.ativo) {
+    background-color: #ddd !Important;
+}
+
+ul#submenuitem li a {
+    border: 1px solid transparent;
+}
+
+ul#submenuitem.mostrar {
+    display: block;
+}
+
+
+ul#submenu:hover ul#submenuitem.mostrar {
+    display: none;
+}
+
+#menu ul li a:hover, 
+#menu ul li a.ativo {
+    background-color: rgba(0,0,0,0.3);
+}
+#menu > ul > li:last-of-type #submenuitem {
+    left: 100%;
+}
+
+div#conteudosub {
+    float: left;
+    position: absolute;
+    top: 76px;
+    width: 100%;
+}
+tr td span.nome {
+    float: left;
+    width: 70%;
+}
+
+tr td span.imagens {
+    float: right;
+    width: 60px;
+}
+
+tr td span.imagens a {
+    float: left;
+    width: 30px;
+}
+
+.formulario table.semCor tr td {
+    text-align: center;
+    font: bold 16px/1.2 Calibri;
+}
+
+select.jogadores + .chosen-container.chosen-container-multi, select.jogadores + .chosen-container.chosen-container-multi ul {
+    height: 210px !important;
+}

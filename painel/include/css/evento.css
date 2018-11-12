@@ -1,0 +1,174 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+.jogo .placar div .gol {width: 60px;height: 60px;border: 5px solid #7FC78F;border-radius: 50%;margin-top: -10px;background-color: #FFF;font: bold 44px/59px Calibri;text-align: center;color: #006737;}
+
+
+.jogo {
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    position: relative;
+}
+
+.jogo .placar {
+    float: left;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top: 40px;
+}
+
+.jogo .placar .mandante {
+    float: left;
+    border-radius: 8px 0px 0px 45px;
+}
+
+.jogo .placar .visitante {
+    float: right;
+    border-radius: 0px 8px 45px 0px;
+}
+
+.jogo .placar .mandante .gol {
+    float: right;
+    margin-right: -15px;
+}
+
+.jogo .placar .visitante .gol {
+    float: left;
+    margin-left: -15px;
+}
+
+.jogo .placar div[class*=ante] {
+    width: 350px;
+    height: 50px;
+    background-color: #7FC78F;
+}
+
+.jogo .placar p.time {
+    float: left;
+    width: 290px;
+    text-align: center;
+    font: bold 30px/50px Calibri;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.jogo .resumo {
+    float: left;
+    margin-top: 120px;
+    position: absolute;
+    width: 450px;
+    left: 50%;
+    margin-left: -255px;
+    border: 10px solid #53B169;
+    border-radius: 20px;
+    min-height: 150px;
+    padding: 20px;
+    background-color: #96CEA4;
+}
+
+.jogo .resumo .gols, .jogo .resumo .cartoes {
+    width: 450px;
+    float: left;
+    border-bottom: 5px solid #FFF;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.jogo .resumo div div {
+    float: left;
+    width: 172px;
+}
+
+.jogo .resumo div[class*=ante] p {
+    width: 100%;
+    color: #FFF;
+    font: normal 14px/1.2 Calibri;
+    position: relative;
+    float: left;
+    margin: 5px 0px;
+}
+
+.jogo .resumo .rotulo {
+    color: #FFF;
+    font: normal 17px/1.2 Calibri;
+    text-align: center;
+    width: 100px;
+}
+
+.jogo .resumo .visitante p {
+    text-align: right;
+}
+.jogo .resumo .gols .mandante p:before,
+.jogo .resumo .gols .visitante p:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/evento/gol.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -3px;
+}
+.jogo .resumo .gols .mandante p:before {
+    float: right;
+}
+.jogo .resumo .gols .visitante p:after {
+    float: left;
+}
+
+.jogo .resumo .gols .mandante p.contra:before {
+    background-image: url('../img/evento/contra.png');
+}
+.jogo .resumo .gols .visitante p.contra:after {
+    background-image: url('../img/evento/contra.png');
+}
+
+
+.jogo .resumo .cartoes .mandante p:before,
+.jogo .resumo .cartoes .visitante p:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.jogo .resumo .cartoes .mandante p:before {
+    float: right;
+}
+.jogo .resumo .cartoes .visitante p:after {
+    float: left;
+}
+.jogo .resumo .cartoes div p.amarelo:before,
+.jogo .resumo .cartoes div p.amarelo:after {
+    background-image: url('../img/evento/amarelo.png');
+}
+.jogo .resumo .cartoes div p.vermelho:before,
+.jogo .resumo .cartoes div p.vermelho:after {
+    background-image: url('../img/evento/vermelho.png');
+}
+
+
+
+.jogo .resumo .visitante p span {
+    float: right;
+    width: 152px;
+}
+
+.jogo .resumo .mandante p span {
+    float: left;
+    width: 152px;
+}
+
+.jogo .info {
+    width: 100%;
+    float: left;
+}
+
+.jogo .info p {
+    width: 20%;
+    float: left;
+    text-align: center;
+    font: bold 18px/1.2 Calibri;
+}

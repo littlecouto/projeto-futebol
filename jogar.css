@@ -1,0 +1,485 @@
+@charset "iso-8859-1";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	color: inherit;
+	text-align: inherit;
+	text-decoration: inherit;
+	list-style: none;
+}
+
+body {
+	font: normal 16px/1.2 Calibri;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+div.rodada {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+h1.temporada {
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 1.625em;
+}
+
+h2.rodada {
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 1.375em;
+}
+
+
+.rodada .jogo {
+	float: left;
+	width: 800px;
+}
+
+ul.jogadores, 
+ul.suplentes {
+	width: 100%;
+	display: table;
+}
+
+ul.jogadores {
+	border-bottom: 3px solid #BBB;
+	padding-bottom: 17px;
+}
+
+ul.suplentes {
+	padding-top: 17px;
+}
+
+div.equipe.mandante ul.jogadores,
+div.equipe.mandante ul.suplentes {
+	float: left;
+}
+
+div.equipe.visitante ul.jogadores,
+div.equipe.visitante ul.suplentes {
+	float: right;
+}
+
+
+.rodada .jogo .jogadores > li,  
+.rodada .jogo .suplentes > li  {
+	min-width: 240px;
+	display: table;
+	line-height: 1.5625;
+	border-radius: 5px;
+	margin: 3px 0px;
+	overflow: hidden;
+}
+
+.rodada .jogo .jogadores > li.jogador,
+.rodada .jogo .suplentes > li.jogador {
+	border: 1px solid #BBB;
+	cursor: pointer;
+}
+
+.rodada .jogo .equipe.mandante .jogadores li.tecnico {
+	background-color: #F1F1F1;
+	color: #d62020;
+}
+.rodada .jogo .visitante .jogadores li.tecnico {
+	background-color: #666;
+	color: #FFF;
+}
+
+.rodada .jogo .jogadores li.jogador:not(.inativo):hover,
+.rodada .jogo .suplentes li.jogador:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rodada .jogo li.jogador.selecionado {
+	border-color: rgba(0, 0, 0, 1);
+	z-index: 1;
+}
+
+.rodada .jogo li.jogador.menu {
+	height: 100px;
+}
+
+
+.rodada .jogo .equipe.mandante .jogadores li.jogador, 
+.rodada .jogo .equipe.mandante .suplentes li.jogador {
+	text-align: left;
+	padding-right: 7px;
+	float: left;
+	position: relative;
+}
+
+.rodada .jogo .visitante .jogadores li.jogador, 
+.rodada .jogo .visitante .suplentes li.jogador, 
+.rodada .jogo .visitante .jogadores li.tecnico {
+	text-align: right;
+	padding-left: 7px;
+	float: right;
+}
+
+.rodada .jogo .jogadores li.inativo {
+	color: #a6a6a6;
+	cursor: not-allowed;
+}
+
+.rodada .jogo .equipe .jogadores li.jogador:before,
+.rodada .jogo .equipe .suplentes li.jogador:before,
+.rodada .jogo .equipe .jogadores li.tecnico:before {
+	content: attr(data-numero);
+	width: 25px;
+	height: 25px;
+	text-align: center;
+}
+
+.rodada .jogo .equipe .jogadores li.jogador:after,
+.rodada .jogo .equipe .suplentes li.jogador:after {
+	content: attr(data-posicao);
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	font-size: 0.75em;
+	line-height: 2.166666666666667;
+}
+
+.rodada .jogo .equipe.mandante .jogadores li.jogador:before,
+.rodada .jogo .equipe.mandante .suplentes li.jogador:before,
+.rodada .jogo .equipe.mandante .jogadores li.tecnico:before {
+	float: left;
+	background-color: #F1F1F1;
+	color: #d62020;
+	margin-right: 5px;
+}
+
+.rodada .jogo .equipe.mandante .jogadores li.jogador:after, 
+.rodada .jogo .equipe.mandante .suplentes li.jogador:after {
+	float: left;
+	margin-right: 10px;
+}
+
+.rodada .jogo .equipe.mandante .jogadores li.goleiro:before,
+.rodada .jogo .equipe.mandante .suplentes li.goleiro:before {
+	background-color: #000;
+	color: #CC4;
+}
+
+.rodada .jogo .equipe.visitante .jogadores li.goleiro:before,
+.rodada .jogo .equipe.visitante .suplentes li.goleiro:before {
+	background-color: #F1F1F1;
+	color: #666;
+}
+
+.rodada .jogo .visitante .jogadores li.jogador:before,
+.rodada .jogo .visitante .suplentes li.jogador:before,
+.rodada .jogo .visitante .jogadores li.tecnico:before {
+	float: right;
+	background-color: #666;
+	color: #FFF;
+	margin-left: 15px;
+}
+
+.rodada .jogo .visitante .jogadores li.jogador:after,
+.rodada .jogo .visitante .suplentes li.jogador:after {
+	float: right;
+	margin-left: 15px;
+}
+
+.rodada .jogo .equipe.mandante .jogadores li.inativo:before,
+.rodada .jogo .visitante .jogadores li.inativo:before {
+
+	background-color: #a6a6a6;
+}
+
+
+
+
+.rodada .jogo .evento {
+	width: 12px;
+	height: 25px;
+	background-size: contain;
+}
+
+.rodada .jogo .equipe.mandante .evento {
+	float: right;
+	margin-left: 5px;
+}
+
+.rodada .jogo .equipe.mandante .jogadores .evento:after,
+.rodada .jogo .equipe.visitante .jogadores .evento:before {
+	content: attr(data-quantidade);
+	float: right;
+	width: 10px;
+	margin-top: 4px;
+	margin-right: -10px;
+	font-size: 11px;
+	border-radius: 50%;
+	text-align: right;
+}
+
+.rodada .jogo .equipe.mandante .jogadores .evento[data-quantidade],
+.rodada .jogo .equipe.visitante .jogadores .evento[data-quantidade] {
+	margin-right: 15px;
+}
+
+.rodada .jogo .equipe.visitante .evento {
+	float: left;
+	margin-right: 5px;
+}
+
+.evento.gol {
+    background-image: url(img/gol.png);
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+}
+
+.evento.gol_contra {
+    background-image: url(img/contra.png);
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+}
+
+.evento.amarelo {
+    background-image: url(img/amarelo.png);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+}
+
+.evento.seg_amarelo {
+    background-image: url(img/seg-amarelo.png);
+    background-repeat: no-repeat;
+    background-position-y: 6px;
+}
+
+.evento.substituto {
+    background-image: url(img/substituto.png);
+    background-repeat: no-repeat;
+}
+
+.evento.sai {
+    background-image: url(img/entra.png);
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+}
+
+.evento.entra {
+    background-image: url(img/sai.png);
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+}
+
+.evento.vermelho {
+    background-image: url(img/vermelho.png);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+}
+
+.evento.contusao {
+    background-image: url(img/contusao.png);
+    background-repeat: no-repeat;
+    background-position-y: 7px;
+}
+
+
+
+div.equipe {
+	width: 250px;
+}
+
+div.info.placar {
+	
+float: left;
+	
+width: 280px;
+	
+text-align: center;
+	
+font-size: 2.7em;
+	
+margin: 17px 0px;
+}
+
+
+.info.placar p.tempo {
+	float: left;
+	width: calc(100% / 3);
+	text-align: center;
+	font-size: 0.5em;
+	line-height: 2.4;
+}
+
+.info.placar > span {
+	width: calc(100% / 3);
+	float: left;
+}
+
+.info.placar span.m_tempo {
+	width: 100%;
+	float: left;
+	line-height: 1;
+}
+
+.info.placar .mandante {
+	float: left;
+	text-align: left;
+}
+
+.info.placar .visitante {
+	float: right;
+	text-align: right;
+}
+
+.info.placar .listar.eventos {
+	width: 100%;
+	float: left;
+	margin-top: 0px;
+	font-size: 0.35em;
+	height: 400px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.info.placar .listar.eventos .narracao {
+	float: left;
+	width: 100%;
+}
+
+.equipe.mandante {
+	float: left;
+	margin-right: 10px;
+}
+
+.equipe.visitante {
+	float: right;
+	margin-left: 10px;
+}
+
+div.equipe .info {
+	width: 250px;
+}
+
+div.equipe.mandante .info {
+	float: left;
+}
+
+div.equipe.visitante .info {
+	float: right;
+}
+
+div.equipe .info .escudo {
+	width: 55px;
+	height: 55px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 15px 10px;
+}
+
+div.equipe.mandante .info .escudo {
+	float: right;
+}
+
+div.equipe.visitante .info .escudo {
+	float: left;
+}
+
+div.equipe .info h3.equipe {
+	margin-top: 31px;
+}
+
+div.equipe.mandante .info h3.equipe {
+	float: right;
+	text-align: right;
+}
+div.equipe.visitante .info h3.equipe {
+	float: left;
+	text-align: left;
+}
+
+
+.info.placar .lista_evento {
+	float: left;
+	width: 100%;
+	margin: 2px 0px;
+}
+
+.info.placar .lista_evento .tempo {
+	font-size: 0.8em;
+	line-height: 2.1;
+}
+
+.info.placar .lista_evento.mandante .tempo {
+	float: left;
+	text-align: left;
+	margin-right: 5px;
+}
+
+.info.placar .lista_evento.visitante .tempo {
+	float: right;
+	margin-left: 5px;
+}
+
+.info.placar .lista_evento .jogador {
+	font-size: 0.8em;
+	line-height: 20px;
+	line-height: 2.1;
+}
+
+.info.placar .lista_evento.mandante .jogador {
+	float: left;
+	text-align: left;
+}
+
+.info.placar .lista_evento.visitante .jogador {
+	float: right;
+	text-align: right;
+}
+
+
+.rodada .lista_evento.mandante .evento {
+	float: left;
+	margin-right: 5px;
+}
+
+.rodada .lista_evento.visitante .evento {
+	float: right;
+	margin-left: 5px;
+}
+
+.jogador ul.menu {
+	float: left;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.jogador ul.menu li {
+	font-size: 0.8em;
+	line-height: 1.6;
+	cursor: pointer;
+	padding: 0px 5px;
+}
+
+.jogador ul.menu li.funcao {
+	width: 100%;
+}
+
+.jogador ul.menu li.funcao {
+	width: 50px;
+	float: left;
+	text-align: center;
+}
+
+.jogador ul.menu li:hover {
+	background-color: #BBB;
+	color: #FFF;
+}

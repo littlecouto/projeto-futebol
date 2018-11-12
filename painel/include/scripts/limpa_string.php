@@ -1,0 +1,9 @@
+<?php
+function limpa_string($str){
+	
+	$a = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿºª';
+	$b = 'aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyoa';
+	
+	return strtr($str, $a, $b);
+}
+?>

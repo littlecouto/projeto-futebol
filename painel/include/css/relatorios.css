@@ -1,0 +1,95 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#conteudo   {
+	float: left;
+	width: 100%;
+}
+#conteudo .topo {
+	width: 680px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#conteudo table#topo{
+	float: left;
+	width: 680px;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+#conteudo table#info {
+	float: right;
+}
+
+#conteudo table#relatorio{
+	float: left;
+	width: 680px;
+	border: 1px solid #000;
+	font-size: 12px;
+}
+#conteudo table tr td  {
+	font-family: calibri, "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding: 3px;
+}
+#conteudo .topo table tr .borda {
+	border: 1px solid #000;
+}
+
+#conteudo tr .verde  {
+	text-align: center;
+	font-weight: bold;
+	color: #090;
+}
+#conteudo tr .amarelo  {
+	text-align: center;
+	font-weight: bold;
+	color: #F90;
+}
+#conteudo tr .vermelho  {
+	text-align: center;
+	font-weight: bold;
+	color: #F00;
+}
+#conteudo tr td:nth-child(1) p {
+    text-align: left !important;
+}
+#conteudo .topo h1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	margin: 0px;
+}
+#conteudo .topo hr {
+	background-color: #000;
+	height: 1px;
+	width: 680px;
+	margin-right: auto;
+	margin-left: auto;
+	float: left;
+}
+
+
+#conteudo tr p {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    float: left;
+    padding: 4px 0px;
+}
+
+#conteudo tr p:last-of-type {
+    border: none;
+    padding-bottom: 0px;
+}
+
+.grafico {
+    width: 680px;
+    margin:  auto;
+}
+
+.grafico img {
+    float: left;
+    margin: 50px 0px;
+}
+
+#relatorio tr:hover td {
+    background-color: #EEE;
+}

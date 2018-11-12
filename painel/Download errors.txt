@@ -1,0 +1,36 @@
+﻿Sorry, there was a problem downloading some files from OneDrive. Please try again.
+
+form1.css - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%216855&action=Download
+
+Chrome.png - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217298&action=Download
+
+ad_contrato.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217682&action=Download
+
+ad_jogador.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217681&action=Download
+
+alt_time.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217680&action=Download
+
+list_jogadores.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217675&action=Download
+
+list_times.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217671&action=Download
+
+ad_time.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217704&action=Download
+
+alt_time.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217701&action=Download
+
+list_times.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217694&action=Download
+
+ad_jogador.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217713&action=Download
+
+alt_time.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217711&action=Download
+
+list_jogadores.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217708&action=Download
+
+list_times.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217706&action=Download
+
+ger_permissoes.php-tmp - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%217717&action=Download
+
+painel-menusub.php - https://onedrive.live.com/?cid=77bd01c7cf644dfb&id=77BD01C7CF644DFB%216615&action=Download
+
+
+

@@ -1,0 +1,475 @@
+<?php
+header('Content-Type: text/html; charset=iso-utf-8',true);
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="iso-8859-1">
+<title>Brasfoot</title>
+
+<script src="jquery-3.0.0-alpha1.js"></script>
+<link href="jogo.css" rel="stylesheet" type="text/css">
+
+<script src="include/js/jquery.bpopup.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+    $('p.placar').click(function() {
+        var classe = '.'+$(this).attr('data-class');
+        $('.resumo'+classe).bPopup();
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<?php
+
+$db['server']     = 'mysql.ewebtecnologia.com.br';
+$db['user']         = 'ewebtecnologia02';
+$db['password']     = 'sql2585';
+$db['dbname']     = 'ewebtecnologia02';
+
+$db['server']       = 'localhost';
+$db['user']         = 'root';
+$db['password']     = '';
+$db['dbname']       = 'brasfoot';
+
+$conn = mysql_connect($db['server'],$db['user'],$db['password']);
+mysql_select_db($db['dbname'],$conn);
+
+
+//error_reporting(0);
+
+/*echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+
+*/
+include 'fazer_jogos.php';
+
+
+
+$rodada = array(
+    array(
+        array(
+            'm'=>'Juventus',
+            'v'=>'Palmeiras',
+        ),
+    )
+);
+ 
+$rodada = array(
+    array(
+        array(
+            'm'=>'Palmeiras',
+            'v'=>'Milan',
+        ),
+    )
+);
+$rodada = array(
+    array(
+        array(
+            'm'=>'Juventus',
+            'v'=>'Real Madrid',
+        ),
+    )
+);
+
+$rodada = array(
+    array(
+        array(
+            'v'=>'Avai',
+            'm'=>'Coritiba',
+        ),
+    ),
+
+);
+// mysql_query("TRUNCATE evento") or die(mysql_error());
+// mysql_query("TRUNCATE jogo") or die(mysql_error());
+
+for ($divisao=1; $divisao <=1; $divisao++) { 
+
+$rowTem = mysql_fetch_array(mysql_query("SELECT temporada FROM jogo WHERE rodada=18 AND realizado=1 AND divisao=$divisao ORDER BY temporada DESC LIMIT 1"));
+$temAnt = $rowTem['temporada'];
+$qtdT1 = 8;
+$qtdT2 = 0;
+$filtro1 = "DESC";
+$filtro2 = "DESC";
+
+$divisao == 1 ? $times = '>0' : $times = '=0';
+if($divisao == 2){
+    $qtdT1 = 2;
+    $qtdT2 = '2,8';
+    $filtro1 = "ASC";
+    $filtro2 = "DESC";
+}
+if($temAnt<1){
+    $sql = "SELECT LOWER(T.apelido) AS time, (SELECT SUM(J.forca) FROM jogador J, jogador_time C WHERE T.idTim=C.idTim AND C.idJgd=J.idJgd) as FORCAS FROM times T WHERE T.ativo=1 AND T.idPai='1' AND FIELD(apelido, 'CRUZEIRO',  'CORINTHIANS',  'GRÊMIO', 'ATLÉTICO-PR', 'JOINVILLE', 'ATLÉTICO-MG', 'CHAPECOENSE', 'CORITIBA', 'INTERNACIONAL', 'SÃO PAULO') $times  ORDER BY FORCAS DESC, apelido LIMIT 10";
+}else{
+    $sql = "select
+            (select LOWER(t.apelido) FROM times t where t.idTim=time) as time,
+            count(*) J, 
+            sum(
+                  case when golM > golV then 3 else 0 end 
+                + case when golM = golV then 1 else 0 end
+            ) P, 
+            count(case when golM > golV then 1 end) V, 
+            count(case when golM = golV then 1 end) E, 
+            count(case when golV> golM then 1 end) D, 
+            sum(golM) GP, 
+            sum(golV) GC, 
+            sum(golM) - sum(golV) SG
+        from (
+            select idMan time, golM, golV, temporada from jogo 
+            WHERE temporada='$temAnt' AND divisao=1
+          union all
+            select idVis, golV, golM, temporada from jogo
+            WHERE temporada='$temAnt' AND divisao=1
+        ) a 
+        group by time
+        order by temporada $filtro1, P $filtro1, V $filtro1, SG $filtro1, GP $filtro1 LIMIT $qtdT1
+
+    ";
+}
+    $res = mysql_query($sql) or die(mysql_error());
+
+$times = array();
+
+while($row = mysql_fetch_array($res)){
+    $times[] = ucwords($row['time']);
+}
+//shuffle($times);
+
+/*echo "<pre>";
+print_r($times);
+echo "</pre>";
+*/
+
+$rowRod = mysql_fetch_array(mysql_query("SELECT rodada, temporada FROM jogo WHERE divisao=$divisao AND realizado=1 ORDER BY temporada DESC, rodada DESC"));
+$temporada = $rowRod['temporada'];
+
+$qtdRod = ((count($times)-1)*2);
+
+if ($rowRod['rodada']<1) {
+    $rowRod['rodada'] = 0;
+}
+    $rodada = $rowRod['rodada'];
+
+
+$rowTur = mysql_fetch_array(mysql_query("SELECT turno FROM jogo WHERE idCom=2 AND divisao=$divisao AND temporada=$temporada ORDER BY temporada DESC, rodada DESC"));
+
+$turno = $rowTur['turno'];
+if($turno==2){
+    $rodada++;
+}elseif ($turno == 0) {
+    $turno = 1;
+}else{
+    $turno++;
+}
+
+if($temporada<1){
+    $temporada = 1;
+}
+
+if($rodada>=count($times) and $rodada <=$qtdRod){
+    $rodada = $rodada-count($times)+1;
+}
+if($rodada > $qtdRod){
+    $rowRod['rodada'] = 0;
+    $rodada = 1;
+    $temporada = $temporada+1;
+}
+
+// if($rodada >= count($times)){
+//     $temporada = $temporada+1;
+//     $rodada = $rodada-count($times)+1;
+//     $turno = 2;
+// }else{
+//     $temporada = $temporada;
+// }
+
+
+$rodada = jogo($times,$rodada, $turno, 2);
+/*echo "<pre>";
+print_r($rodada);
+echo "</pre>";
+*/
+
+
+
+echo "<script>
+$(document).ready(function(){
+";     
+ $divisao == 1 ? $inc = 0 : $inc = 10;
+   foreach ($rodada as $c => $v) {
+        $jgd_usados = array();
+        foreach ($v as $i) {
+            $inc++;
+            $rowEst = mysql_fetch_array(mysql_query("SELECT (SELECT e.nome FROM estadio e WHERE e.idEst=t.idEst) AS nome, t.idEst, t.idTim FROM times t WHERE t.apelido LIKE '%$i[m]%'"));
+
+
+            $rowVis = mysql_fetch_array(mysql_query("SELECT idTim FROM times WHERE apelido LIKE '%$i[v]%'"));
+            $idMan = $rowEst['idTim'];
+            $idVis = $rowVis['idTim'];
+            $idEst = $rowEst['idEst'];
+
+            if($rowEst['nome'] == ''){
+                $rowEst = mysql_fetch_array(mysql_query("SELECT nome FROM estadio ORDER BY rand()"));
+            }
+
+            $JogInc = $JG = $PS = 1;
+            $filtro = '';
+
+           $time1 = $time2 = '';
+           for($Jgd1 = 1; $Jgd1<=5; $Jgd1++){
+                if($Jgd1==1){
+                    $idPos = 1;
+                    $QtdJ1 = 1;
+                }elseif ($Jgd1 == 2) {
+                    $idPos = 2;
+                    $QtdJ1 = 2;
+                }elseif ($Jgd1 == 3) {
+                    $idPos = 3;
+                    $QtdJ1 = 2;
+                }elseif ($Jgd1 == 4) {
+                    $idPos = 4;
+                    $QtdJ1 = 4;
+                }elseif ($Jgd1 == 5) {
+                    $idPos = 5;
+                    $QtdJ1 = 2;
+                }
+                $resTim1 = mysql_query("SELECT LOWER(j.apelido) AS apelido, j.idJgd, j.forca, j.idPos FROM jogador j INNER JOIN jogador_time c ON j.idJgd=c.idJgd INNER JOIN times t ON c.idTim=t.idTim WHERE t.idTim=$idMan AND j.idPos='$idPos' ORDER BY forca DESC LIMIT $QtdJ1") or die(mysql_error());
+
+                while($rowTim1 = mysql_fetch_array($resTim1)){
+                    $rowTim1['apelido'] =  ucwords($rowTim1['apelido']);
+                    
+                    $rowTim1['apelido'] = strtr($rowTim1['apelido'], array('ã©'=>'é'));
+    
+    
+                    if($JogInc < 11){
+                        $time1 .= "'$rowTim1[apelido]',
+                ";
+                    }elseif($JogInc == 11){
+                        $time1 .= "'$rowTim1[apelido]'";
+                    }
+                    $JogInc++;
+                    
+                }
+            }
+            $JogInc = 1;
+
+           for($Jgd2 = 1; $Jgd2<=5; $Jgd2++){
+                if($Jgd2==1){
+                    $idPos = 1;
+                    $QtdJ2 = 1;
+                }elseif ($Jgd2 == 2) {
+                    $idPos = 2;
+                    $QtdJ2 = 2;
+                }elseif ($Jgd2 == 3) {
+                    $idPos = 3;
+                    $QtdJ2 = 2;
+                }elseif ($Jgd2 == 4) {
+                    $idPos = 4;
+                    $QtdJ2 = 4;
+                }elseif ($Jgd2 == 5) {
+                    $idPos = 5;
+                    $QtdJ2 = 2;
+                }
+                $resTim2 = mysql_query("SELECT LOWER(j.apelido) AS apelido, j.idJgd, j.forca, j.idPos FROM jogador j INNER JOIN jogador_time c ON j.idJgd=c.idJgd INNER JOIN times t ON c.idTim=t.idTim WHERE t.idTim=$idVis AND j.idPos='$idPos' ORDER BY forca DESC LIMIT $QtdJ2") or die(mysql_error());
+
+                while($rowTim2 = mysql_fetch_array($resTim2)){
+                    $rowTim2['apelido'] =  ucwords($rowTim2['apelido']);
+                    
+                    $rowTim2['apelido'] = strtr($rowTim2['apelido'], array('ã©'=>'é'));
+    
+    
+                    if($JogInc < 11){
+                        $time2 .= "'$rowTim2[apelido]',
+                ";
+                    }elseif($JogInc == 11){
+                        $time2 .= "'$rowTim2[apelido]'";
+                    }
+                    $JogInc++;
+                    
+                }
+            }            
+
+            $rodAtu = $rowRod['rodada'];
+
+            $turno = (int) $rowTur['turno'];
+            if($turno == 2){
+                $rodAtu++;
+            }elseif($turno == 0){
+                $turno = 1;
+            }else{
+                $turno++;
+            }
+            $rodAtu == 0 ? $rodAtu++ : '';
+
+            $rowJog = mysql_fetch_array(mysql_query("SELECT idJog, turno FROM jogo WHERE idCom='2' AND turno='$turno' AND idMan='$idVis' AND idVis='$idMan' AND rodada='$rodAtu' AND temporada='$temporada'"));
+            if($rowJog['idJog'] <1){
+                mysql_query("INSERT INTO jogo(
+                    idCom, idMan, idVis, idEst, rodada, turno, temporada, divisao
+                )VALUE(
+                    '2', '$idMan', '$idVis', '$idEst', '$rodAtu', '$turno', '$temporada', '$divisao'
+                )") or die(mysql_error());
+                $rowJog = mysql_fetch_array(mysql_query("SELECT idJog FROM jogo WHERE idMan='$idMan' AND idVis='$idVis' AND rodada='$rodAtu' AND turno='$turno' AND temporada='$temporada'"));
+            }elseif($rowJog['idJog']>0){
+                mysql_query("DELETE FROM evento WHERE idJog='$rowJog[idJog]'") or die(mysql_error());
+            }
+            $idJog = $rowJog['idJog'];
+            
+            $rowFor1 = mysql_fetch_array(mysql_query("SELECT (SELECT ROUND(AVG(J.forca)) FROM jogador J, jogador_time C WHERE T.idTim=C.idTim AND C.idJgd=J.idJgd) as FORCAS FROM times T WHERE T.idTim=$idMan"));
+            $rowFor2 = mysql_fetch_array(mysql_query("SELECT (SELECT ROUND(AVG(J.forca)) FROM jogador J, jogador_time C WHERE T.idTim=C.idTim AND C.idJgd=J.idJgd) as FORCAS FROM times T WHERE T.idTim=$idVis"));
+            $forca1 = $rowFor1['FORCAS']+15;
+            $forca2 = $rowFor2['FORCAS']-5;
+            echo "
+            Jogar('jogo$inc', '$i[m]', '$i[v]', '$rowEst[nome]', 
+            [
+                [
+                $time1
+                ],
+                [
+                $time2
+                ]
+            ],'$idJog', '$idMan', '$idVis', '$forca1', '$forca2');
+";
+        }
+    }
+echo "});
+
+</script>
+
+
+<div class=\"rodada\">";
+
+$divisao == 1 ? $inc = 0 : $inc = 10;
+foreach ($rodada as $c => $v) {
+    if($divisao==1){
+        echo"
+        <h1>$temporada º TEMPORADA</h1>
+        <h2>RODADA ".($rodAtu)."</h2>";
+   } 
+   foreach ($v as $i) {
+    $inc++;
+    $Man = mysql_fetch_array(mysql_query("SELECT escudo FROM times WHERE apelido='$i[m]'")) or die(mysql_error());
+    $Vis = mysql_fetch_array(mysql_query("SELECT escudo FROM times WHERE apelido='$i[v]'")) or die(mysql_error());
+    $IMGM = "http://ewebtecnologia.com.br/vini/brasfoot/img/time/$Man[escudo].png";
+    $IMGV = "http://ewebtecnologia.com.br/vini/brasfoot/img/time/$Vis[escudo].png";
+   echo "
+    
+    <div class=\"jogo$inc\">
+        <div style=\"display: none;\">
+            <p class=\"abr1\"></p>
+            <p class=\"abr2\"></p>
+        </div>
+        <div class=\"jogadores\">
+            <div class=\"man\"></div>
+            <div class=\"vis\"></div>
+        </div>
+        
+        <!--<p class=\"posse\">Posse de bola: <span class=\"man\">50</span>% - <span class=\"vis\">50</span>%</p>-->
+        <p class=\"tempo\">0</p>
+        <img src='imagem.php?img=$IMGM&amp;w=35&amp;h=35' class='escudo' alt='$i[m]' title='$i[m]'> 
+        <p class=\"placar\" data-class=\"jogo$inc\"> 0x0 </p>
+        <img src='imagem.php?img=$IMGV&amp;w=35&amp;h=35' class='escudo' alt='$i[v]' title='$i[v]'>
+        <p class=\"eventos\"></p>
+        
+        <p style=\"display: none;\" class=\"narrar\">Vão começar as cobranças</p>
+        <p style=\"display: none;\" class=\"timeM\"><span>0</span> - </p>
+        <p style=\"display: none;\" class=\"timeV\"><span>0</span> - </p>
+        
+        <div class=\"jogo$inc resumo\">
+            <div class=\"man\">
+                <img src='imagem.php?img=$IMGM&amp;w=75&amp;h=75' class='escudo' alt='$i[m]' title='$i[m]'>
+                <h2>$i[m]</h2>
+                <ul class=\"jogadores\">
+
+                </ul>
+            </div>
+            <div class=\"evento\">
+                <div>
+                <div class=\"aviso\">1º</div>
+                </div>
+            </div>
+            <div class=\"vis\">
+                <img src='imagem.php?img=$IMGV&amp;w=75&amp;h=75' class='escudo' alt='$i[v]' title='$i[v]'>
+                <h2>$i[v]</h2>
+                <ul class=\"jogadores\"></ul>
+            </div>
+            <div class=\"posse\">
+                <p class='man'>50%</p>
+                <p class='vis'>50%</p>
+            </div>
+
+        </div>
+
+        <div class=\"penaltis\">
+            <div class=\"man\"></div>
+            <div class=\"vis\"></div>
+        </div>
+        <button class=\"jogar\" style='display: none;'>JOGAR</button>
+        <button class=\"pausar\" style='display: none;'>PAUSAR</button>
+    </div>
+";
+    }
+}
+echo 
+"</div>
+";
+
+
+
+}
+
+?>
+<script src="jogo.js"></script>
+<?php exit;?>
+<script>
+    $(function(){
+        var a = 0;
+        var busTab = setInterval(function(){
+            var dados = {
+                'ACAO' : 'TABELA',
+                'temp' : '<?= $temporada ?>',
+                'divi' : '1'
+            }
+            data = $(this).serialize() + "&" + $.param(dados);
+            $.post('atu_tabela.php',data,function(retorna){
+                $('.tabela1').html(retorna);
+            });
+            var dados = {
+                'ACAO' : 'TABELA',
+                'temp' : '<?= $temporada ?>',
+                'divi' : '2'
+            }
+            data = $(this).serialize() + "&" + $.param(dados);
+            $.post('atu_tabela.php',data,function(retorna){
+                $('.tabela2').html(retorna);
+            });
+            if(a >= 25){
+                var dados = {
+                    'ACAO' : 'FIMRODADA',
+                    'temp' : '<?= $temporada ?>',
+                    'rodA' : '<?= $rodAtu ?>'
+                }
+                data = $(this).serialize() + "&" + $.param(dados);
+                $.post('atu_tabela.php',data,function(retorna){
+                    var rodada = <?=$rodAtu?>;
+                    if(retorna === 'SIM'){
+                        clearInterval(busTab);
+                        if(rodada<18){
+                            location.reload();
+                        }
+                    }
+                });
+            }
+
+            a++;
+        }, 2500);
+    });
+</script>
+</body>
+</html> 

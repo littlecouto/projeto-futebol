@@ -1,0 +1,383 @@
+@charset "utf-8";
+/* CSS Document */
+
+.penaltis div {
+  width: 50%;
+  float: left;
+  min-height: 100px;
+}
+.eventos div div div{
+    width: 15px;
+    height: auto;
+    float: left;
+    min-height: 15px;
+    background-size: contain;
+    background-position: center center;
+    margin: 0px 10px 0px 5px;
+}
+.gol {
+    background-image: url(img/gol.png);
+    background-repeat: no-repeat;
+}
+.contra {
+    background-image: url(img/contra.png);
+    background-repeat: no-repeat;
+}
+.amarelo {
+    background-image: url(img/amarelo.png);
+    background-repeat: no-repeat;
+}
+.seg-amarelo {
+    background-image: url(img/seg-amarelo.png);
+    background-repeat: no-repeat;
+}
+.substituto {
+    background-image: url(img/substituto.png);
+    background-repeat: no-repeat;
+}
+.entra {
+    background-image: url(img/entra.png);
+    background-repeat: no-repeat;
+}
+.sai {
+    background-image: url(img/sai.png);
+    background-repeat: no-repeat;
+}
+.vermelho {
+    background-image: url(img/vermelho.png);
+    background-repeat: no-repeat;
+}
+.contusao {
+    background-image: url(img/contusao.png);
+    background-repeat: no-repeat;
+}
+.eventos .man {
+    width: 100%;
+    font-weight: bold;
+    float: left;
+}
+.eventos .vis {
+    width: 100%;
+    float: left;
+    text-align: right;
+}
+.eventos .man > div{
+    float: left;
+}
+.eventos .vis > div{
+    float: right;
+    text-align: right;
+    margin-right: 50px;
+}
+p.eventos {
+    width: 50%;      
+    float: left;
+    margin: 0;
+}
+.jogadores {
+    width: 40%;
+    float: right;
+    margin: 0;
+}
+.jogadores div {
+    float: left;
+    width: 50%;
+}
+.vis div div {
+    float: right !important;
+}
+body .rodada div[class*=jogo]:not(.resumo){
+    float: left;
+    width: 250px;
+    height: 90px;
+    overflow: hidden;
+    margin: 5px 0px;
+    position: relative;
+    padding-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+body .rodada > div[class*=jogo]> p {
+    float: left;
+    text-align: center;
+    margin: 0px;
+}
+p.placar {
+    width: 75px;
+    font: normal 19px/1.2 Calibri;
+    top: 27px;
+    float: left;
+    border: 1px solid #BBB;
+    position: relative;
+    z-index: 0;
+    padding: 3px 50px;
+    margin: 0px -50px !important;
+    color: #666;
+    border-radius: 0px 0px 50px 50px;
+}
+p.tempo {
+    width: 70px;
+    text-align: center;
+    float: left;
+    font: normal 18px/25px Calibri;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border: 1px solid #BBB;
+    height: 22px;
+    padding: 2px 50px;
+    color: #666;
+    border-radius: 50px 50px 0px 0px;
+}
+p.eventos {
+    height: 30px;
+    width: 230px;
+    float: left;
+    margin-top: 10px !important;
+    margin-left: 5px !important;
+}
+body {
+    font: normal 16px/1.2 Calibri;
+}
+.resumo {
+    width: 880px;
+    background: #FFF;
+    padding: 30px 40px;
+    opacity: 0;
+    left: 50% !important;
+    margin-left: -490px;
+    top: 10px !important;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+.b-modal+.resumo{
+    position: fixed !important;
+}
+.resumo .man div[class], .resumo .vis div[class] {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    margin: 0px 15px;
+    display: table;
+    float: left;
+}
+.resumo .man>div {
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+}
+.resumo .vis>div {
+    float: right;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+}
+.resumo > .evento {
+    float: left;
+    width: 398px;
+    margin: 5px 0px;
+    border: none;
+    border-left: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.resumo .evento .aviso {
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 8px 0px;
+    float: left;
+    width: 100%;
+}
+.resumo > .man {
+    float: left;
+    width: 240px;
+    min-height: 100px;
+}
+.resumo > .vis {
+    width: 240px;
+    float: right;
+    min-height: 100px;
+}
+.resumo > .man .jogadores {
+    float: left;
+    width: 240px;
+    list-style: none;
+    padding: 0px;
+    text-align: left;
+}
+.resumo > .man .jogadores li {
+    margin-top: 5px;
+}
+.resumo > .vis .jogadores {
+    float: right;
+    width: 240px;
+    list-style: none;
+    padding: 0px;
+    text-align: right;
+}
+.resumo > .vis .jogadores li {
+    margin-top: 5px;
+}
+.resumo .man h2 {
+    text-align: center;
+    float: left;
+    width: 150px;
+    margin-right: 15px;
+}
+.resumo .vis h2 {
+    text-align: center;
+    width: 125px;
+    margin-top: 30px;
+    float: left;
+    margin-left: 20px;
+}
+.resumo h2 {
+    font: bold 26px/1.2 Calibri;
+}
+table tr:nth-child(2) td:first-of-type, .tabela2 table tr:nth-child(3) td:first-of-type {
+    color: #077347;
+    font-weight: bold;
+}
+.tabela1 table tr:nth-child(10) td:first-of-type, .tabela1 table tr:nth-child(11) td:first-of-type {
+    color: #DC143C;
+}
+table tr:first-of-type{
+    background-color: #888;
+    border-radius: 10px 10px 0px 0px;
+}
+.rodada {
+    width: 700px;
+    height: 400px;
+    display: table;
+    float: left;
+    margin-left: 20px;
+}
+.tabela {
+    float: left;
+    width: 550px;
+    margin-top: 20px;
+    padding-bottom: 100px;
+}
+.tabela table{
+    width: 500px;
+    float: left;
+    min-height: 100px;
+}
+.tabela.tabela1 {
+    border-bottom: 1px dashed #BBB;
+    margin-top: 100px;
+    padding-bottom: 90px;
+}
+.resumo .posse {
+    width: 398px;
+    height: 70px;
+    display: table;
+    margin: 0px 240px;
+    border-left: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    margin-top: -5px;
+    float: left;
+}
+.resumo .posse p {
+    font: bold 18px/1.2 Calibri;
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.resumo .vis .escudo {
+    margin-left: 20px;
+}
+tr {
+    border: 1px solid #888;
+    float: left;
+    width: 560px;
+    border-top: none;
+}
+table tr td:first-of-type {
+    width: 180px;
+    float: left;
+    padding: 10px 5px 10px 20px;
+    text-align: left;
+}
+table tr td {
+    padding: 10px 3px;
+    color: #FFF;
+    font-weight: 500;
+    text-align: center;
+        line-height: 28px
+}
+table tr:first-of-type td {
+    font-weight: bold;
+}
+table tr:first-of-type td:first-of-type {
+    border-radius: 5px !important;
+}
+.tabela table tr:last-of-type {
+    border-radius: 0px 0px 10px 10px;
+}
+table tr:not(:first-of-type) td {
+    color: #000;
+}
+div[class*=jogo]> img.escudo {
+    border-radius: 50%;
+    border: 1px solid #BBB;
+    /* padding: 5px; */
+    position: relative;
+    z-index: 2;
+    background-color: #FFF;
+    width: 55px;
+    float: left;
+    height: 55px;
+    box-shadow: 0px 0px 4px #BBB;
+}
+table tr td:not(:first-of-type) {
+    width: 30px;
+    float: left;
+}
+img.escudo {
+    float: left;
+}
+
+.rodada:first-of-type {
+    border-bottom: 1px dashed #BBB;
+    padding-bottom: 100px;
+    min-height: 633px;
+}
+
+table tr:nth-child(1n+10) td:first-of-type {
+    color: #dc143c;
+}
+table tr td span{
+    width: 22px;
+    font: normal 13px/17px Calibri;
+    display: table;    
+}
+table tr td span.pos.melhor {
+    background-color: #077347;
+    color: #FFF;
+}
+table tr td span.pos.pior {
+    background-color: #dc143c;
+    color: #FFF;
+}
+span.situacao {
+    color: #000;
+    float: left;
+    width: 22px;
+    font: bold 13px/17px Calibri;
+    display: table; 
+    padding: 3px;
+
+}
+table tr td span.situacao.melhor {
+    color: #077347;
+}
+table tr td span.situacao.pior {
+    color: #dc143c;
+}
+

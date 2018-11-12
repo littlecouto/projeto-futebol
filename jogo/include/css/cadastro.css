@@ -1,0 +1,132 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html, body {
+    width: 100%;
+    float: left;
+    height: 100%;
+    font: 15px/1.2 Calibri;
+}
+
+
+div#tudo {
+    width: 350px;
+    height: 540px;
+    float: left;
+    position: absolute;
+    left: 50%;
+    margin-left: -175px;
+    top: 50%;
+    margin-top: -270px;
+    box-sizing: border-box;
+    padding: 45px;
+}
+#tudo h1 {
+    float: left;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    font: bold 36px/1.2 Calibri;
+    color: #FFF;
+    background-color: #063;
+    padding: 15px 0px;
+    z-index: 1;
+}
+#tudo form {
+    width: 100%;
+    height: auto;
+    float: left;
+    max-height: 100%;
+}
+
+#tudo form input {
+    width: 200px;
+    float: left;
+    padding: 15px;
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #bbb;
+    font-size: 25px;
+    line-height: 20px;
+    border: none;
+}
+
+#tudo form input[type=submit] {
+    cursor: pointer;
+}
+
+#tudo form input:hover {
+    background-color: rgba(255,255,255,.2);
+    color: #DDD;
+}
+#tudo form p {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3px 13px;
+    float: left;
+}
+
+#tudo form p select {
+    width: 230px;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#tudo form p input::-webkit-input-placeholder {
+    line-height: 30px;
+    color: #999;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color:rgba(255,255,255.2); 
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color:rgba(0,0,0,0.2); 
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #197547 inset;
+    -webkit-text-fill-color: #BBB !important;
+}
+#tudo form input {
+	transition: all .3s;
+}
+#tudo form input:focus +span:before {
+    content: attr(data-regra);
+    float: left;
+    height: 59px;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #999;
+    font-size: 18px;
+    width: 300px;
+}
+
+#tudo form input +span {
+    position: relative;
+}
+	
+
+#tudo form .pais {
+    float: left;
+    width: 100%;
+}
+#tudo form .times .time p.subtitulo font {
+    color: #BBB;
+    text-decoration: underline;
+    word-spacing: 6px;
+}
